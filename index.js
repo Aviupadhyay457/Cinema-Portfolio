@@ -14,7 +14,6 @@ for (let film of films){
     }
 }
 genreArray=genreArray.sort()
-console.log(films.length)
 
 
 dropDownBoxGenre.innerHTML+=`<button class="dropdown-box-option-btn-genre" id="Any-Genre">Any Genre</button>`
@@ -38,7 +37,7 @@ const dropdownBoxGenre=document.getElementById("dropdown-box-genre")
             for(let selectedGenre of dropdownBoxOptionBtnGenre){
                 selectedGenre.classList.remove("dropdown-box-option-btn-genre-selected")
             }
-            console.log(e)
+           
         }
 
             if (e.target.id!="dropdown-box-genre"){
@@ -147,7 +146,6 @@ dropdownBoxYear.addEventListener("mouseover",function(e){
             selectedYear.classList.remove("dropdown-box-option-btn-year-selected")
             selectedYear.textContent=selectedYear.textContent.replace(" ►","")
         }
-        console.log(findingDecade)
         let decadeId="btn"+findingDecade+"s"
         document.getElementById(decadeId).classList.add("dropdown-box-option-btn-year-selected")
         document.getElementById(decadeId).textContent=findingDecade+"s"+" ►"
@@ -340,7 +338,7 @@ applyBtn.addEventListener("click",function(){
         for(let i=0;i<=9;i++){
             yearValArray.push(decade+i)
         }
-        console.log(yearValArray)
+        
     }
 
     const ratingBtnHead=document.getElementById("rating-btn-head")
@@ -418,10 +416,10 @@ applyBtn.addEventListener("click",function(){
                 }            
             }
             else{
-                console.log("hello")
+                
                 if (film.genre.includes(genreBtnHead.textContent)&&film.year==yearVal){
                     filteredFilms.push(film)
-                    console.log("bye")
+              
                 }
             }
             // console.log(allMoviesContainer)
@@ -496,7 +494,7 @@ allMoviesContainer.addEventListener("click",function(e){
     let clickedElementId=e.target.closest(".movie-container").id
     clickedElementId=clickedElementId.substring(4,clickedElementId.length)
     clickedElementId=Number(clickedElementId)
-    console.log(clickedElementId)
+   
     let listitem="<ul>"
     for(let genre of films[clickedElementId-1].genre){
         listitem+=` <li class="genre-tag"> ${genre} </li> `
@@ -625,7 +623,6 @@ rouletteBtn.addEventListener("click",function(){
     else if(films[x].rating===5){
         rewatchQuote="Absolute Cinema."
     }
-    console.log(rewatchQuote)
 
     setTimeout(function(){
         let listitem="<ul>"
@@ -730,9 +727,6 @@ function filmsData(){
             finalObject[genre]=[genreObject[genre],favouriteObject[genre]]
         }
     }
-    console.log(genreObject)
-    console.log(favouriteObject)
-    console.log(finalObject)
     
     let x=Math.max(...Object.values(genreObject)) //finding max value
     let mostWatched=[]
@@ -743,7 +737,6 @@ function filmsData(){
     }
 
     movies.watchedGenre=mostWatched
-    console.log(movies)
 
 
     //finding favourtie genre
@@ -763,10 +756,8 @@ function filmsData(){
     for(let value of values){
         mostRatedArray.push(value[1]/value[0])
     }
-    console.log(mostRatedArray)
 
     let mostRated=Math.max(...mostRatedArray)
-    console.log(mostRated)
 
     let finalMostRated=[]
     for(let [genre,[count,ratingSum]] of Object.entries(finalObject)){
@@ -774,7 +765,6 @@ function filmsData(){
             finalMostRated.push(genre)
         }
     }
-    console.log(finalMostRated)
     movies.favGenre=finalMostRated
 
     return movies
