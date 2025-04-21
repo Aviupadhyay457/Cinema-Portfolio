@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>
+        Cinema Portfolio
+        </title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    </head>
+    <body>
+
+        <header id="page-header">
+            <nav>
+                <img src="images/totoro-navigation.png"
+                 alt="icon of totoro from miyazaki's my neighbor totoro"
+                 class="icon-image"
+                 id ="icon-image">
+                <h1 id="site-name">Cinema Portfolio</h1>
+                <button class="home-btn" id="home-btn">My films</button>
+                <button class="roulette-btn" id="roulette-btn">Film Roulette</button>
+                <Button class="profile-btn" id="profile-btn">Profile</Button>
+            </nav>
+        </header>
+
+
+        <main id="main-container">
+            <!-- search bar -->
+            <div class="search-bar-container">
+                <!-- for genre dropdown -->
+                <div class="dropdown-container" id="genre-dropdown-container">
+                <div class="dropdown-for-flex">
+                    <button class="genre-btn-head" id="genre-btn-head">Genre</button>
+                    <img src="siteImages/dropdown.png" class="dropdown-img">
+                </div>
+                <div class="dropdown-box" id="dropdown-box-genre">
+                </div>
+                </div>
+                <!-- for year dropdown -->
+                <div class="dropdown-container" id="year-dropdown-container">
+                    <div class="dropdown-for-flex" id="head-of-dropdown">
+                        <button class="year-btn-head" id="year-btn-head">Year</button>
+                        <img src="siteImages/dropdown.png" class="dropdown-img">
+                    </div>
+                    <div class="dropdown-box" id="dropdown-box-year">
+                    </div>
+                    </div> 
+                <!-- my ratings dropdown -->
+                 <div class="dropdown-container" id="rating-dropdown-container">
+                    <div class="dropdown-for-flex">
+                        <button class="genre-btn-head" id="rating-btn-head">Rating</button>
+                        <img src="siteImages/dropdown.png" class="dropdown-img">
+                    </div>
+                    
+                    <div class="dropdown-box" id="dropdown-box-rating">
+                    </div> 
+                    </div>
+                <!-- Apply button  -->
+                <button class="apply-btn" id="apply-btn">Apply</button>
+            </div>
+
+            <section>
+                <div class="all-movies-container" id="all-movies-container">
+                </div>
+            </section>
+        </main>
+
+        <div class="popup-movie-container" id="popup-movie-container">
+        </div>
+
+        <div class="popup-roulette-container" id="popup-roulette-container">     
+        </div>
+
+        <div class="profile-container" id="profile-container">
+        </div>
+
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
